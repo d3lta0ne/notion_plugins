@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "ts-node src/index.ts",
+    "start": "firebase login && firebase init && ts-node src/index.ts",
     "typecheck": "tsc --noEmit",
     "build": "tsc",
     "format": "prettier --write src/**/*.ts"
@@ -24,6 +24,7 @@
     "firebase": "9.20.0",
     "prettier": "^2.7.1",
     "ts-node": "^10.8.2",
-    "typescript": "^4.7.4"
+    "typescript": "^4.7.4",
+    "firebase-tools": "11.28.0"
   }
 }
