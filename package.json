@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "firebase login && firebase init && ts-node src/index.ts",
+    "start": "ts-node src/index.ts",
     "typecheck": "tsc --noEmit",
     "build": "tsc",
     "format": "prettier --write src/**/*.ts"
@@ -14,17 +14,20 @@
   "keywords": [],
   "author": "",
   "dependencies": {
+    "@google-cloud/local-auth": "^2.1.0",
     "@notionhq/client": "^2.2.2",
     "dotenv": "^16.0.3",
-    "dotenv-json": "^1.0.0"
+    "dotenv-json": "^1.0.0",
+    "googleapis": "^105.0.0"
   },
   "devDependencies": {
     "@types/dotenv": "^8.2.0",
     "@types/node": "^18.0.3",
-    "firebase": "9.20.0",
+    "@types/firebase": "3.2.1",
+    "firebase-tools": "^11.28.0",
+    "@firebase/app": "0.9.8",
     "prettier": "^2.7.1",
     "ts-node": "^10.8.2",
-    "typescript": "^4.7.4",
-    "firebase-tools": "11.28.0"
+    "typescript": "^4.7.4"
   }
 }
