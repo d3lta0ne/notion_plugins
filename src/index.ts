@@ -1,23 +1,27 @@
 import { Client } from "@notionhq/client";
-import dotenv from "dotenv";
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
 
-dotenv.config();
+require("dotenv").config();
 
 async function main() {
   const notion = new Client({
     auth: process.env.NOTION_TOKEN,
   });
 
+  const firebaseConfig = JSON.parse(process.env.FIREBASE_CONFIG || "{}");
+
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+
   const response = await notion.databases.query({
-    database_id: "FIXME",
+    database_id: process.env.NOTION_DATABASE_DAILYLOG_ID || "",
   });
 
   console.log("Got response:", response);
 }
 
-main()
-  .then(() => process.exit(0))
-  .catch((err) => {
-    console.error(err);
-    process.exit(1);
-  });
+main().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});
