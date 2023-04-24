@@ -15,7 +15,7 @@
   "author": "",
   "dependencies": {
     "@google-cloud/local-auth": "^2.1.0",
-    "@notionhq/client": "^2.2.2",
+    "@notionhq/client": "^2.2.4",
     "dotenv": "^16.0.3",
     "dotenv-json": "^1.0.0",
     "googleapis": "^105.0.0"
